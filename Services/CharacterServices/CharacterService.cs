@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Web_API.Models;
 
 namespace Web_API.Services.CharacterServices
@@ -10,18 +11,18 @@ namespace Web_API.Services.CharacterServices
             new Character(),
             new Character{Id=1, Name="Sam"}
         };
-        public List<Character> AddCharacter(Character newCharacter)
+        public async Task<List<Character>> AddCharacter(Character newCharacter)
         {
             characters.Add(newCharacter);
             return characters;
         }
 
-        public List<Character> GetAllCharacter()
+        public async Task<List<Character>> GetAllCharacter()
         {
             return characters;
         }
 
-        public Character GetCharacterById(int id)
+        public async Task<Character> GetCharacterById(int id)
         {
             return characters.FirstOrDefault(c => c.Id == id);
         }
