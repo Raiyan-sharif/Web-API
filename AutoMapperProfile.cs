@@ -9,6 +9,7 @@ namespace Web_API
         public AutoMapperProfile()
         {
             CreateMap<Character, GetCharacterDto>();
+            CreateMap<AddCharacterDto,Character>();
         }
     }
 }
